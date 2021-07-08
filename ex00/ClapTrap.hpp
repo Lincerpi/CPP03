@@ -6,7 +6,7 @@
 /*   By: lincerpi <lincerpi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 13:27:02 by lincerpi          #+#    #+#             */
-/*   Updated: 2021/07/07 20:14:15 by lincerpi         ###   ########.fr       */
+/*   Updated: 2021/07/08 15:58:46 by lincerpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class ClapTrap
 		ClapTrap();
 		
 	public:
+		//TODO : operator costruction & copy 
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap&);
 		~ClapTrap();
