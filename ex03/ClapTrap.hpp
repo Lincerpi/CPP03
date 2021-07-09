@@ -6,7 +6,7 @@
 /*   By: lincerpi <lincerpi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 13:27:02 by lincerpi          #+#    #+#             */
-/*   Updated: 2021/07/08 18:14:59 by lincerpi         ###   ########.fr       */
+/*   Updated: 2021/07/09 14:06:23 by lincerpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,29 @@
 #include <iostream>
 #include <string>
 
-class ClapTrap;
-
 class ClapTrap 
 {
-		std::string		_name;
-		unsigned int	_hitPoints;
-		unsigned int	_energyPoints;
-		unsigned int	_attackDamage;
+		std::string		name;
+		unsigned int	hitPoints;
+		unsigned int	energyPoints;
+		unsigned int	attackDamage;
+	
 		ClapTrap();
-		
+
 	public: 
 		ClapTrap(std::string name);
-		~ClapTrap();
+		virtual ~ClapTrap();
 		ClapTrap(const ClapTrap& copy);
 		void operator = (const ClapTrap &op);
 		std::string getName() const;
+		void	setHitPoints(unsigned int hitPoints);
+		void	setEnergyPoints(unsigned int energyPoints);
+		void	setAttackDamage(unsigned int attackDamage);
+		void	setName(std::string name);
 		unsigned int getHitPoint() const;
 		unsigned int getEnergyPoints() const;
 		unsigned int getAttackDamage() const;
-		void	attack(std::string const & target);
+		virtual void	attack(std::string const & target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
 };

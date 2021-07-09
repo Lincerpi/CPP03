@@ -6,17 +6,18 @@ ScavTrap::ScavTrap(std::string name)
 ClapTrap(name),
 boolGuardGate(false)
 {	
+	setName(name);
 	setHitPoints(100);
 	setEnergyPoints(50);
 	setAttackDamage(20);
 	std::cout << "Building ScavTrap " << getName() << std::endl; 	
 }
 
-void ScavTrap::operator = (const ScavTrap &)
-{}
-
 ScavTrap::~ScavTrap()
 {	std::cout << "Destroying ScavTrap " << getName() << std::endl; }
+
+void ScavTrap::operator = (const ScavTrap &)
+{}
 
 void	ScavTrap::guardGate()
 {

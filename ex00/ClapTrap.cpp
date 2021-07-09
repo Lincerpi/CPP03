@@ -6,7 +6,7 @@
 /*   By: lincerpi <lincerpi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 13:26:59 by lincerpi          #+#    #+#             */
-/*   Updated: 2021/07/08 13:35:23 by lincerpi         ###   ########.fr       */
+/*   Updated: 2021/07/08 18:15:35 by lincerpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,37 @@ _energyPoints((unsigned int)10),
 _attackDamage((unsigned int)0)
 {	std::cout << "Building ClapTrap " << getName() << std::endl; }
 
-ClapTrap::ClapTrap(const ClapTrap&)
-{}
-
 ClapTrap::~ClapTrap()
 {	std::cout << "Destroying ClapTrap " << getName() << std::endl; }
 
-std::string	ClapTrap::getName()
+ClapTrap::ClapTrap(const ClapTrap& copy)
+{
+	_name = copy.getName();
+	_hitPoints = copy.getHitPoint();
+	_energyPoints = copy.getEnergyPoints();
+	_attackDamage = copy.getAttackDamage();
+}
+
+void ClapTrap::operator = (const ClapTrap &op)
+{
+	if (this == &op)
+		return ;
+	_name = op.getName();
+	_hitPoints = op.getHitPoint();
+	_energyPoints = op.getEnergyPoints();
+	_attackDamage = op.getAttackDamage();
+}
+
+std::string	ClapTrap::getName() const
 {	return(_name); }
 
-unsigned int ClapTrap::getHitPoint()
+unsigned int ClapTrap::getHitPoint() const
 {	return (_hitPoints); }
 
-unsigned int ClapTrap::getEnergyPoints()
+unsigned int ClapTrap::getEnergyPoints() const
 {	return (_energyPoints); }
 
-unsigned int ClapTrap::getAttackDamage()
+unsigned int ClapTrap::getAttackDamage() const
 {	return(_attackDamage); }
 
 void	ClapTrap::attack(std::string const & target)

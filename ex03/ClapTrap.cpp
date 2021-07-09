@@ -6,7 +6,7 @@
 /*   By: lincerpi <lincerpi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 13:26:59 by lincerpi          #+#    #+#             */
-/*   Updated: 2021/07/08 18:26:28 by lincerpi         ###   ########.fr       */
+/*   Updated: 2021/07/09 13:56:16 by lincerpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void ClapTrap::operator = (const ClapTrap &op)
 }
 
 std::string	ClapTrap::getName() const
-{	return(name); }
+{	return(this->name); }
 
 unsigned int ClapTrap::getHitPoint() const
 {	return (hitPoints); }
@@ -88,6 +88,9 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	<< " points!" << std::endl; 
 }
 
-
+void	ClapTrap::setName(std::string name)
+{
+	this->name = name;
+}
 
 

@@ -5,7 +5,7 @@
 #include <string>
 
 
-class ScavTrap: public ClapTrap 
+class ScavTrap: virtual public ClapTrap 
 {
 		bool boolGuardGate;
 		ScavTrap();
@@ -16,7 +16,7 @@ class ScavTrap: public ClapTrap
 		ScavTrap(const ScavTrap&);
 		void operator = (const ScavTrap &);
 		void	guardGate();
-		void	attack(std::string const & target);
+		virtual void	attack(std::string const & target);
 };
 
 #endif

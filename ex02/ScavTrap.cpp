@@ -12,11 +12,11 @@ boolGuardGate(false)
 	std::cout << "Building ScavTrap " << getName() << std::endl; 	
 }
 
-void ScavTrap::operator = (const ScavTrap &)
-{}
-
 ScavTrap::~ScavTrap()
 {	std::cout << "Destroying ScavTrap " << getName() << std::endl; }
+
+void ScavTrap::operator = (const ScavTrap &)
+{}
 
 void	ScavTrap::guardGate()
 {
